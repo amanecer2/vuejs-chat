@@ -34,7 +34,8 @@
           type: '',
           action: '',
           user: '',
-          text: ''
+          text: '',
+          time: ''
         },
         areTyping: []
       }

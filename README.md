@@ -2,6 +2,8 @@
 
 > vue chat
 
+> base on youtube video ```https://www.youtube.com/watch?v=Fm-81NKLDg8&list=PLdgnFBfcK3Q1BWKj96xJIGVLzB75H3OhF&index=3```
+* need to improve it by change the architecture into Vuex 
 ## Build Setup
 
 ``` bash
@@ -28,3 +30,5 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+

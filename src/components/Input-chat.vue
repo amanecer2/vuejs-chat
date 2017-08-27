@@ -1,9 +1,10 @@
 <template>
   <section>
     <div class="panel-footer">
-      <form>
-        <input type="text" class="form-controller input-sm" placeholder="Type something" @bind="name"/>
-      </form>
+        <div class="row">
+          <input type="text" class="form-controller input-lg col-sm-12" placeholder="Type something" @bind="name"/>
+        </div>
+
     </div>
   </section>
 </template>

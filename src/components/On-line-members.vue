@@ -2,9 +2,9 @@
   <section>
     <div class="panel">
       <div class="panel-heading">
-        <span class="glyphicon glyphicon-user">(2)</span><span>online</span>
+        <span class="glyphicon glyphicon-user">({{usersOnLine.length}})</span><span>online</span>
         <ul>
-          <li>shahar</li>
+          <li v-for="user of usersOnLine">{{user}}</li>
         </ul>
       </div>
     </div>
@@ -12,11 +12,11 @@
 </template>
 <script>
   export default {
-    name: 'on-line-members',
-    data () {
-      return {
-        name: ''
-      }
+    name: 'chatty-on-line-members',
+    props: ['usersOnLine'],
+    // TODO make this vuex
+    created () {
+      console.dir(this.usersOnLine)
     }
   }
 </script>

@@ -1,10 +1,9 @@
 <template xmlns="http://www.w3.org/1999/html">
   <section>
-    {{name}}
     <div class="container">
       <div class="row">
         <div class="col-sm-3">
-          <on-line-members></on-line-members>
+          <chatty-on-line-members :users-on-line="connectUsers"></chatty-on-line-members>
         </div>
         <div class="col-sm-9">
 
@@ -13,12 +12,9 @@
               Chat
             </div>
             <div class="panel-body">
-              <ul>
-                <li>message 1</li>
-              </ul>
+              <chatty-message v-for="massage in messages" :msg="massage"></chatty-message>
             </div>
             <chatty-input-chat></chatty-input-chat>
-
           </div>
         </div>
       </div>
@@ -31,7 +27,35 @@
     name: 'chatRoom',
     data () {
       return {
-        name: 'shahar'
+        // TODO to make vuex
+        connectUsers: ['shahar', 'mor'],
+        messages: [],
+        massage: {
+          type: '',
+          action: '',
+          user: '',
+          text: ''
+        },
+        areTyping: []
+      }
+    },
+    created () {
+      console.log('created!!1')
+    },
+    methods () {
+      return {
+        send () {
+          console.log('msg sent')
+        },
+        userTyping (userName) {
+          console.log('typing', userName)
+        },
+        usersAreTyping () {
+          console.log('typing')
+        },
+        stoppedTyping () {
+          console.log('stop typing')
+        }
       }
     }
   }

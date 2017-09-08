@@ -11,12 +11,15 @@ import Message from './components/Message.vue'
 /* ...there may be other imports here */
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bootstrap/dist/css/bootstrap.css'
+import VueSocketio from 'vue-socket.io'
 
+Vue.use(VueSocketio, 'http://localhost:3000')
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 Vue.component('chatty-on-line-members', OnLineMembers)
 Vue.component('chatty-input-chat', InputChat)
 Vue.component('chatty-message', Message)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

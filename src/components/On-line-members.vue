@@ -16,7 +16,6 @@
     props: ['usersOnLine'],
     // TODO make this vuex
     created () {
-      console.dir(this.usersOnLine)
     }
   }
 </script>

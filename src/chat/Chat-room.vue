@@ -28,7 +28,7 @@
     data () {
       return {
         // TODO to make vuex
-        connectUsers: ['shahar', 'mor'],
+        connectUsers: [],
         messages: [],
         massage: {
           type: '',
@@ -41,7 +41,11 @@
       }
     },
     created () {
-      console.log('created!!1')
+      /* get users from socket */
+      this.$socket.on('user joined', userId => {
+        console.log('client join', userId)
+        this.connectUsers.push(userId)
+      })
     },
     methods () {
       return {

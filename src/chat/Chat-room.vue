@@ -25,6 +25,14 @@
 <script>
   export default {
     name: 'chatRoom',
+    sockets: {
+      connect: function () {
+        console.log('socket connected')
+      },
+      join: function (val) {
+        this._data.connectUsers.push('dsadas')
+      }
+    },
     data () {
       return {
         // TODO to make vuex
@@ -42,25 +50,30 @@
     },
     created () {
       /* get users from socket */
-      this.$socket.on('user joined', userId => {
-        console.log('client join', userId)
-        this.connectUsers.push(userId)
+
+      this.$socket.emit('join', {
+        name: 'sdadsa',
+        time: new Date().getHours() + '-' + new Date().getMinutes() + '-' + new Date().getSeconds()
+      })
+      this.$socket.on('join', (emit) => {
+        console.log(emit)
+      })
+      this.$socket.on('message', (emit) => {
+        console.log(emit)
       })
     },
-    methods () {
-      return {
-        send () {
-          console.log('msg sent')
-        },
-        userTyping (userName) {
-          console.log('typing', userName)
-        },
-        usersAreTyping () {
-          console.log('typing')
-        },
-        stoppedTyping () {
-          console.log('stop typing')
-        }
+    methods: {
+      send () {
+        console.log('msg sent')
+      },
+      userTyping (userName) {
+        console.log('typing', userName)
+      },
+      usersAreTyping () {
+        console.log('typing')
+      },
+      stoppedTyping () {
+        console.log('stop typing')
       }
     }
   }

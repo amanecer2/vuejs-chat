@@ -1,7 +1,7 @@
 export class MassageModal {
-  constructor (id, text, by = 'me') {
+  constructor (id, text, style = 'sent') {
     this.id = id
     this.text = text
-    this.by = by
+    this.style = style
   }
 }

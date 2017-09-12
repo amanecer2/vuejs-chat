@@ -38,7 +38,7 @@
         this._data.connectUsers.push('dsadas')
       },
       message (val) {
-        var msg = new MassageModal(this._data.messages.length, val, 'shahar')
+        var msg = new MassageModal(this._data.messages.length, val, 'sent')
         this._data.messages.push(msg)
       }
     },

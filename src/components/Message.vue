@@ -1,6 +1,6 @@
 <template xmlns="http://www.w3.org/1999/html">
   <div v-bind:class="msg.type">
-      <div class="message sent">
+      <div class="message " :class="msg.style">
         {{msg.text}}
         <span class="metadata">
           <span class="time"></span>
@@ -24,7 +24,10 @@
 <script>
   export default {
     name: 'chatty-message',
-    props: ['msg']
+    props: ['msg'],
+    created () {
+      console.log(this.msg)
+    }
   }
 </script>
 

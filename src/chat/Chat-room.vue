@@ -23,6 +23,7 @@
 </template>
 
 <script>
+  import { MassageModal } from '../modal/massageModal'
   export default {
     name: 'chatRoom',
     sockets: {
@@ -31,6 +32,10 @@
       },
       join: function (val) {
         this._data.connectUsers.push('dsadas')
+      },
+      message (val) {
+        var msg = new MassageModal(this._data.messages.length, val, 'shahar')
+        this._data.messages.push(msg)
       }
     },
     data () {

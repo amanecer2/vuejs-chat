@@ -4,7 +4,7 @@
       <div class="row">
         <input type="text" class="form-controller input-lg col-sm-12"
                placeholder="Type something"
-               @bind="massage"
+               v-model="massage"
                @keyup.13="submit(massage)"/>
       </div>
 
@@ -21,8 +21,7 @@
     },
     methods: {
       submit (val) {
-        this.$socket.emit('message', this._data.massage)
-        console.log('emit massage')
+        this.$socket.emit('message', val)
         this._data.massage = ''
       }
     }

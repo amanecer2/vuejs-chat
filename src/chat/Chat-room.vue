@@ -12,7 +12,11 @@
               Chat
             </div>
             <div class="panel-body">
-              <chatty-message v-for="massage in messages" :msg="massage"></chatty-message>
+              <div class="conversation">
+                <div class="conversation-container">
+                  <chatty-message v-for="massage in messages" :msg="massage"></chatty-message>
+                </div>
+              </div>
             </div>
             <chatty-input-chat></chatty-input-chat>
           </div>
@@ -23,7 +27,7 @@
 </template>
 
 <script>
-  import { MassageModal } from '../modal/massageModal'
+  import {MassageModal} from '../modal/massageModal'
   export default {
     name: 'chatRoom',
     sockets: {
@@ -85,5 +89,23 @@
 </script>
 
 <style>
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
 
+  html {
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
 </style>
